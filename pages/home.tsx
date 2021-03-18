@@ -14,9 +14,12 @@ import { GoLocation } from "react-icons/go";
 import { ImSad } from "react-icons/im";
 import { BsBell } from "react-icons/bs";
 import useSound from 'use-sound';
-import doorbellSfx from '../public/doorbell.mp3';
+//import doorbellSfx from '/sounds/doorbell.mp3';
+// const doorbellSfx = require("/statics/sounds/doorbell.mp3");
 
 export default function CallToActionWithAnnotation() {
+  const doorbellSfx = '/statics/sounds/doorbell.mp3';
+
   const [play] = useSound(doorbellSfx, { volume: 0.4 });
 
   return (
