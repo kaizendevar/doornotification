@@ -6,12 +6,12 @@ import {
   Text,
   Button,
   Stack,
-  createIcon,
-  Icon
+  Icon 
 } from '@chakra-ui/react';
 import { GoLocation } from "react-icons/go";
 import { ImSad } from "react-icons/im";
 import { GiHand } from "react-icons/gi";
+import Image from 'next/image';
 
 export default function CallToActionWithAnnotation() {
   return (
@@ -21,22 +21,32 @@ export default function CallToActionWithAnnotation() {
           href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
           rel="stylesheet"
         />
-      </Head>
+      </Head> 
+
 
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
           textAlign={'center'}
+          alignItems="center"
           spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
+          py={{ base: 20, md: 2 }}>
           <Heading
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }}
             lineHeight={'180%'}>
             <Text as={'span'} color={'green.400'}>
               Door Notification
             </Text> <br />
-            ¡Hay alguien en la puerta!
+            ¡Hay alguien en la puerta! <br />
+            <Box boxSize="sm" borderRadius="md" alignItems="center" marginLeft={6} marginTop={10} height={300}>
+              <Image 
+                src="/openmeplease.jpg"
+                alt="Picture of the author"
+                width={300}
+                height={300}
+              />
+            </Box>
           </Heading>
           <Stack
             direction={'column'}
@@ -44,7 +54,7 @@ export default function CallToActionWithAnnotation() {
             align={'center'}
             alignSelf={'center'}
             position={'relative'}>
-            <Box pt={6}>
+            <Box>
               <Icon as={GoLocation} />
             </Box>
             <Text color={'gray.500'} marginTop={0}>

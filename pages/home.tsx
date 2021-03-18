@@ -13,8 +13,12 @@ import {
 import { GoLocation } from "react-icons/go";
 import { ImSad } from "react-icons/im";
 import { BsBell } from "react-icons/bs";
+import useSound from 'use-sound';
+import doorbellSfx from '../public/doorbell.mp3';
 
 export default function CallToActionWithAnnotation() {
+  const [play] = useSound(doorbellSfx, { volume: 0.4 });
+
   return (
     <>
       <Head>
@@ -59,7 +63,9 @@ export default function CallToActionWithAnnotation() {
                 px={6}
                 _hover={{
                   bg: 'green.500',
-                }}>
+                }}
+                onClick={() => play()}
+              >
                 Estoy en la puerta <Icon as={BsBell} ml={2} />
               </Button>
             </Link>            
